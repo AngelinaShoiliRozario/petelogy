@@ -1,0 +1,70 @@
+#hero {
+  background: url("hero.jpg");
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+  input {
+    display: none;
+  }
+  #r1:checked ~ .slider .first {
+    margin-left: -0vw;
+  }
+  #r2:checked ~ .slider .first {
+    margin-left: -100vw;
+  }
+  #r3:checked ~ .slider .first {
+    margin-left: -200vw;
+  }
+  #r4:checked ~ .slider .first {
+    margin-left: -300vw;
+  }
+
+  #r1:checked ~ .radio-buttons label:nth-child(1) {
+    background-color: black;
+  }
+  #r2:checked ~ .radio-buttons label:nth-child(2) {
+    background-color: black;
+  }
+  #r3:checked ~ .radio-buttons label:nth-child(3) {
+    background-color: black;
+  }
+  #r4:checked ~ .radio-buttons label:nth-child(4) {
+    background-color: black;
+  }
+  .slider {
+    display: flex;
+    .first {
+      margin-left: 0;
+      transition: 3s;
+    }
+    .slide-item {
+      width: 100%;
+      flex-shrink: 0;
+    }
+  }
+  .radio-buttons {
+    width: 100%;
+
+    //background-color: beige;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    label {
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      border-radius: 50%;
+      background-color: white;
+      cursor: pointer;
+      transition: background-color 1.2s;
+    }
+    label:hover {
+      background-color: black;
+    }
+  }
+}

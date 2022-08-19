@@ -1,0 +1,115 @@
+// skdjjhf
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+nav {
+  background-color: white;
+  padding: 10px 25px;
+  display: flex;
+  align-items: center;
+  /* border: 2px solid red; */
+  position: relative;
+  input {
+    display: none;
+  }
+  .left {
+    .logo {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      img {
+        width: 30px;
+      }
+      h1 {
+        text-transform: uppercase;
+        font-weight: 900;
+        // font-family: Arial, sans-serif;
+        font-size: 1.4rem;
+      }
+    }
+  }
+  label {
+    display: none;
+    cursor: pointer;
+    img {
+      width: 50px;
+    }
+  }
+  .right {
+    /* border: 1px solid black; */
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    ul {
+      flex: 1;
+      display: flex;
+      justify-content: space-around;
+      a {
+        padding: 0.5em 1em;
+        cursor: pointer;
+        text-transform: uppercase;
+        font-family: "Poppins", sans-serif;
+        font-size: 0.9rem;
+        font-weight: 100;
+        img {
+          height: 1.5rem;
+          width: 1.5rem;
+        }
+      }
+      a:hover {
+        background-color: white;
+      }
+    }
+    .phone {
+      padding: 0.5em 1em;
+      text-transform: uppercase;
+    }
+  }
+}
+
+@media (max-width: 1002px) {
+  nav {
+    flex-direction: column;
+    align-items: stretch;
+    input:checked ~ .right {
+      max-height: 100vh;
+    }
+    input:checked ~ .right ul a {
+      opacity: 1;
+    }
+    label {
+      display: block;
+      position: absolute;
+      right: 10px;
+      top: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .left {
+      display: flex;
+    }
+    .right {
+      max-height: 0;
+      overflow: hidden;
+
+      transition: max-height 0.5s 100ms, opacity 100s;
+      ul {
+        /* border: 12px solid green; */
+        flex-direction: column;
+        a {
+          text-align: center;
+          padding: 15px;
+          opacity: 0;
+        }
+      }
+      .phone {
+        display: none;
+      }
+    }
+  }
+}
